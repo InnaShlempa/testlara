@@ -25,7 +25,7 @@ $(document).ready(function() {
     }, "Поле Имя должно содержать только буквы пробелы и дефис");
 	$.validator.addMethod("Email", function(value, element) {
 	return this.optional(element) || /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
-	}, );
+	},"Некорректный E-mail" );
 	
 	let Form = $('.js-form');
 	Form.validate({
