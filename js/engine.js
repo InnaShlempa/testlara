@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 	$.validator.addMethod("myName", function(value, element) {
         return this.optional(element) || /^[a-zA-Z-а-яА-Я-\s]+$/.test(value);
-    }, "Поле Имя должно содержать только буквы пробелы и дефис");
+    }, "Имя должно содержать только буквы, пробелы или дефисы");
 	$.validator.addMethod("Email", function(value, element) {
 	return this.optional(element) || /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
 	},"Некорректный E-mail" );
