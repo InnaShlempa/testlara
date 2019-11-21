@@ -1,17 +1,13 @@
 $(document).ready(function() {
 	
-
    $('.card__carousel').each(function() {
     let gallery = $(this);
-	
     gallery
     .slick({
 		arrows: true,
-		infinite: true,//зацикленная прокрутка false
-		
+		infinite: true,//зацикленная прокрутка false	
 		slidesToShow: 1,//сколько слайдов показывать
-		
-		
+		slidesToScroll: 1,//через сколько слайдов показывать
 	})
     .magnificPopup({
         type: 'image',
@@ -19,23 +15,19 @@ $(document).ready(function() {
 		tLoading: 'Загрузка изображения #%curr%...',
 		gallery: {
 			enabled: true,
-			navigateByImgClick: true,
-			
+			navigateByImgClick: true,		
 		  },
-  
     });
   });
 
 	$.validator.addMethod("myName", function(value, element) {
         return this.optional(element) || /^[a-zA-Z-а-яА-Я-\s]+$/.test(value);
     }, "Поле Имя должно содержать только буквы пробелы и дефис");
-	
 	$.validator.addMethod("Email", function(value, element) {
 	return this.optional(element) || /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
 	}, );
 	
 	let Form = $('.js-form');
-	
 	Form.validate({
 		rules: {
 			name: {
@@ -61,8 +53,6 @@ $(document).ready(function() {
 		submitHandler: function(event, form) {
             event.preventDefault();
             alert(Form.serialize());
-        }
-				
+        }		
 	});
-
 })
